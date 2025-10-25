@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>منيو كافيه ومطعم ونسة</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
+    body {
+      margin: 0;
+      font-family: "Cairo", sans-serif;
+      background-color: #000;
+      color: #d4af37;
+      text-align: center;
+    }
+    header {
+      padding: 25px 10px;
+    }
+    img.logo {
+      width: 160px;
+      margin-bottom: 10px;
+    }
+    h2 {
+      margin: 10px 0 5px 0;
+      font-size: 24px;
+    }
+    p {
+      margin: 0;
+      color: #f1d67d;
+    }
+    .menu-select {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 30px 0;
+      flex-wrap: wrap;
+    }
+    .menu-btn {
+      background: #d4af37;
+      color: #000;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 15px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .menu-btn:hover {
+      background: #f7d774;
+      transform: scale(1.05);
+    }
+    .section {
+      display: none;
+      animation: fadeIn 0.5s ease;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    .item {
+      border-bottom: 1px solid #d4af37;
+      margin: 10px auto;
+      width: 90%;
+      max-width: 400px;
+      padding: 10px 0;
+      font-size: 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .price {
+      color: #f7d774;
+    }
+    footer {
+      margin-top: 30px;
+      padding: 15px;
+      font-size: 14px;
+      opacity: 0.8;
+    }
+    a.whatsapp {
+      display: inline-block;
+      margin-top: 15px;
+      background: #25d366;
+      color: #fff;
+      padding: 10px 25px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+    a.whatsapp:hover {
+      background: #20b957;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="https://i.imgur.com/qL0h6zP.png" alt="شعار كافيه ونسة" class="logo" />
+    <h2>مرحبًا بكم في كافيه ومطعم ونسة</h2>
+    <p>استمتع بتجربة فريدة في مصراتة</p>
+    <div class="menu-select">
+      <button class="menu-btn" onclick="showMenu('restaurant')">🍽️ منيو المطعم</button>
+      <button class="menu-btn" onclick="showMenu('cafe')">☕ منيو المقهى</button>
+    </div>
+  </header>
+
+  <div id="restaurant" class="section">
+    <h3>🍽️ قائمة الطعام</h3>
+    <div class="item"><span>برجر لحم كلاسيك</span><span class="price">20 د.ل</span></div>
+    <div class="item"><span>بيتزا مارجريتا</span><span class="price">25 د.ل</span></div>
+    <div class="item"><span>بطاطا مقلية</span><span class="price">10 د.ل</span></div>
+    <div class="item"><span>ساندويتش دجاج مشوي</span><span class="price">18 د.ل</span></div>
+    <div class="item"><span>باستا كاربونارا</span><span class="price">22 د.ل</span></div>
+  </div>
+
+  <div id="cafe" class="section">
+    <h3>☕ قائمة المقهى</h3>
+    <div class="item"><span>قهوة تركية</span><span class="price">7 د.ل</span></div>
+    <div class="item"><span>كابتشينو</span><span class="price">9 د.ل</span></div>
+    <div class="item"><span>لاتيه</span><span class="price">10 د.ل</span></div>
+    <div class="item"><span>إسبريسو</span><span class="price">8 د.ل</span></div>
+    <div class="item"><span>عصير برتقال طبيعي</span><span class="price">8 د.ل</span></div>
+    <div class="item"><span>ميلك شيك شوكولاتة</span><span class="price">12 د.ل</span></div>
+  </div>
+
+  <footer>
+    <a class="whatsapp" href="https://wa.me/218917620910" target="_blank">تواصل عبر واتساب</a>
+    <p>© 2025 كافيه ومطعم ونسة - مصراتة، ليبيا</p>
+  </footer>
+
+  <script>
+    function showMenu(type) {
+      document.querySelectorAll('.section').forEach(s => s.style.display = 'none');
+      document.getElementById(type).style.display = 'block';
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+  </script>
+
+</body>
+</html>
